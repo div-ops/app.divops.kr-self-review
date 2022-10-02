@@ -11,7 +11,11 @@ const Home: NextPage = () => {
 
       <main>
         <h1 css={{ margin: "40px" }}>셀프 코드리뷰 체크리스트</h1>
-        <ul>
+        <ul
+          style={{
+            padding: "20px",
+          }}
+        >
           <CheckItem
             title={
               "var 는 절대 쓰지 말고, 바뀌지 않는 변수면 let 대신 반드시 const를 써야한다."
