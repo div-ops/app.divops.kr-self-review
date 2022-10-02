@@ -10,8 +10,18 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <h1 css={{ margin: "20px" }}>셀프 코드리뷰 체크리스트</h1>
+        <h1 css={{ margin: "40px" }}>셀프 코드리뷰 체크리스트</h1>
         <ul>
+          <CheckItem
+            title={
+              "var 는 절대 쓰지 말고, 바뀌지 않는 변수면 let 대신 반드시 const를 써야한다."
+            }
+            contents={[
+              code("var [user] = useUser(); // ❌"),
+              code("let [user] = useUser(); // ❌"),
+              code("const [user] = useUser(); // ✅"),
+            ].join("\n")}
+          />
           <CheckItem
             title={
               "함수명, 변수명, 클래스명, 컴포넌트명, 상수변수명, 타입/인터페이스명 컨벤션은 잘 지켰는지 확인한다."
@@ -87,10 +97,11 @@ const CheckItem = ({
         open
         style={{
           whiteSpace: "pre-wrap",
-          cursor: "pointer",
         }}
       >
-        <summary style={{ fontSize: "20px" }}>{`  ${title}`}</summary>
+        <summary
+          style={{ fontSize: "20px", cursor: "pointer" }}
+        >{`  ${title}`}</summary>
         <ul
           style={{
             marginTop: "10px",
@@ -113,7 +124,7 @@ const CheckItem = ({
                     style={{
                       background: "#f0f0f0",
                       fontWeight: "bold",
-                      fontSize: "20px",
+                      fontSize: "16px",
                     }}
                   >
                     {x.replace("<code>", "").replace("</code>", "")}
