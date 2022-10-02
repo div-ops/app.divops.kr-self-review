@@ -4,7 +4,7 @@ module.exports = (phase, { defaultConfig }) => {
     // ...defaultConfig,
     reactStrictMode: true,
     swcMinify: true,
-    basePath: "/hello-world",
+    basePath: "/self-review",
   };
 
   return nextConfig;

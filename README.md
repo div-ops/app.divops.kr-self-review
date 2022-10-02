@@ -1,1 +1,1 @@
-# app.divops.kr-hello-world
+# app.divops.kr-self-review

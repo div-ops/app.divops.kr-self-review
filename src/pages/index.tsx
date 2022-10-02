@@ -82,6 +82,7 @@ const CheckItem = ({
   return (
     <li style={{ listStyle: "none", marginBottom: "40px" }}>
       <details
+        open
         style={{
           whiteSpace: "pre-wrap",
           cursor: "pointer",
@@ -89,10 +90,11 @@ const CheckItem = ({
       >
         <summary style={{ fontSize: "20px" }}>{`  ${title}`}</summary>
         <ul style={{ marginTop: "10px" }}>
-          {contents.split("\n").map((x) => {
+          {contents.split("\n").map((x, i) => {
             if (x.startsWith("<code>") && x.endsWith("</code>")) {
               return (
                 <li
+                  key={i}
                   style={{
                     lineHeight: "120%",
                     margin: "10px 0",
@@ -112,6 +114,7 @@ const CheckItem = ({
             }
             return (
               <li
+                key={i}
                 style={{
                   lineHeight: "120%",
                   margin: "10px 0",
