@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { ReactNode } from "react";
 
 const Home: NextPage = () => {
   return (
@@ -72,12 +73,13 @@ export default Home;
 function code(str: string) {
   return `<code>${str}</code>`;
 }
+
 const CheckItem = ({
   title,
   contents,
 }: {
   title?: ReactNode;
-  contents?: ReactNode;
+  contents?: string;
 }) => {
   return (
     <li style={{ listStyle: "none", marginBottom: "40px" }}>
@@ -89,8 +91,15 @@ const CheckItem = ({
         }}
       >
         <summary style={{ fontSize: "20px" }}>{`  ${title}`}</summary>
-        <ul style={{ marginTop: "10px" }}>
-          {contents.split("\n").map((x, i) => {
+        <ul
+          style={{
+            marginTop: "10px",
+            background: "#f0f0f0",
+            paddingTop: "10px",
+            paddingBottom: "10px",
+          }}
+        >
+          {(contents ?? "").split("\n").map((x: string, i: number) => {
             if (x.startsWith("<code>") && x.endsWith("</code>")) {
               return (
                 <li
