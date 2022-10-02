@@ -48,7 +48,7 @@ const Home: NextPage = () => {
               "안티패턴 `변수명: string | undefined;` 은 없는 지 확인한다."
             }
             contents={[
-              "undefined 에 대한 타입 정의는 다음과 같이 한다.",
+              "undefined 에 대한 타입 사용은 다음과 같이 한다.",
               code("변수명?: string;"),
             ].join("\n")}
           />
