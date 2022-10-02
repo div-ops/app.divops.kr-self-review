@@ -69,7 +69,7 @@ const Home: NextPage = () => {
 
 export default Home;
 
-function code(str) {
+function code(str: string) {
   return `<code>${str}</code>`;
 }
 const CheckItem = ({
